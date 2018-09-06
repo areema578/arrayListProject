@@ -8,9 +8,7 @@ public class WarGame {
 	public static void main(String[] args) {
 		String[] suits = new String[] {"Clubs", "Spades", "Hearts", "Diamonds"};
 		String[] faces = new String[] {"Jack", "Queen", "King", "Ace"};
-		HashMap<String, Card> deck = new HashMap<String, Card>();
-		
-		int size = 0;
+		DeckOfCards fullDeck = new DeckOfCards();
 		
 		//makes all the number cards
 		for(int i = 2; i < 11; i++) {
@@ -22,8 +20,7 @@ public class WarGame {
 				}else {
 					cardColor = "Red";
 				}
-				deck.put(cardName, new Card(suit, cardName, cardColor, i, false));
-				size++;
+				fullDeck.deck.add(new Card(suit, cardName, cardColor, i, false));
 			}
 		}
 		
@@ -39,8 +36,7 @@ public class WarGame {
 				}else {
 					cardColor = "Red";
 				}
-				deck.put(cardName, new Card(suit, cardName, cardColor, i, true));
-				size++;
+				fullDeck.deck.add(new Card(suit, cardName, cardColor, i, true));
 			}
 		}
 		
@@ -49,6 +45,7 @@ public class WarGame {
 		System.out.println("Lets play War!");
 		System.out.println("Enter the number of players playing: ");
 		String numOfPlayers = in.nextLine().trim();
+		
 		
 	}
 	

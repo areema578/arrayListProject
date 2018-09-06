@@ -8,65 +8,59 @@ import java.util.TreeMap;
 
 public class DeckOfCards {
 
-	private static TreeMap<String, Card> deckTreeMap = new TreeMap<String, Card>(); //sorted deck
-	private static HashMap<String, Card> deckHashMap = new HashMap<String, Card>(); //not sorted deck
+//	public TreeMap<String, Card> deckTreeMap = new TreeMap<String, Card>(); //sorted deck
+//	public HashMap<String, Card> deckHashMap = new HashMap<String, Card>(); //not sorted deck
+	public ArrayList<Card> deck = new ArrayList<Card>();
+	public static ArrayList<DeckOfCards> hands = new ArrayList<DeckOfCards>();
 	private int size;
+	public String player;
 	
-	public DeckOfCards() {
-		String[] suits = new String[] {"Clubs", "Spades", "Hearts", "Diamonds"};
-		String[] faces = new String[] {"Jack", "Queen", "King", "Ace"};
-		
-		//makes all the number cards
-		for(int i = 2; i < 11; i++) {
-			for(String suit: suits) {
-				String cardName = Integer.toString(i) + " of " + suit;
-				String cardColor = "";
-				if(suit.equals("Clubs") || suit.equals("Spades")) {
-					cardColor = "Black";
-				}else {
-					cardColor = "Red";
-				}
-				deckHashMap.put(Integer.toString(i), new Card(suit, cardName, cardColor, i, false)); //key: card value, value: Card object
-				size++;
-			}
-		}
-		
-		//makes all the face cards
-		int i = 10;
-		for(String face: faces) {
+	public DeckOfCards() { //make the full deck (52)
+//		TreeMap<String, Card> deckTreeMap = new TreeMap<String, Card>(); //sorted deck
+//		HashMap<String, Card> deckHashMap = new HashMap<String, Card>(); //not sorted deck
+		ArrayList<Card> deck = new ArrayList<Card>();
+		size = this.deck.size();
+		player = "";
+	}
+	
+	public DeckOfCards(String playerName) { //make the hands for the players
+//		TreeMap<String, Card> deckTreeMap = new TreeMap<String, Card>(); //sorted deck
+//		HashMap<String, Card> deckHashMap = new HashMap<String, Card>(); //not sorted deck
+		ArrayList<Card> deck = new ArrayList<Card>();
+		size = this.deck.size();
+		player = playerName;
+	}
+	
+	public void shuffle() { //shuffles the hashmap based on the keys (value of the card)
+		Collections.shuffle(this.deck);
+	}
+	
+	public void deal(int numOfPlayers) { //makes hashmaps depending on number of players
+		int i = 1;
+		while(i < numOfPlayers) {
+			String playerName = "Player " + Integer.toString(i);
+			DeckOfCards hand = new DeckOfCards(playerName);
+			hands.add(hand);
 			i++;
-			for(String suit: suits) {
-				String cardName = face + " of " + suit;
-				String cardColor = "";
-				if(suit.equals("Clubs") || suit.equals("Spades")) {
-					cardColor = "Black";
-				}else {
-					cardColor = "Red";
-				}
-				deckHashMap.put(Integer.toString(i), new Card(suit, cardName, cardColor, i, true)); //key: card value, value: Card object
-				size++;
+		}
+		
+		for(Card card:this.deck) {
+			for(int j = 0; j < numOfPlayers; j++) {
+				
 			}
 		}
-	}
-	
-	public static void shuffle() { //shuffles the hashmap based on the keys (value of the card)
-		List keys = new ArrayList(deckHashMap.keySet());
-		Collections.shuffle(keys);
-	}
-	
-	public static void deal(int numOfPlayers) { //makes hashmaps depending on number of players
 		
 	}
 	
-	public static void sort() { //sorts the hashmap by putting it into a treemap for auto sort
-		deckTreeMap.putAll(deckHashMap);
-	}
-	
-	public static void play() { //need?
+	public void sort() { //need?
 		
 	}
 	
-	public static void pickup() { //need?
+	public void play() { //need?
+		
+	}
+	
+	public void pickup() {
 		
 	}
 }
