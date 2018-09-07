@@ -1,5 +1,6 @@
 package arraylistProject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -9,6 +10,7 @@ public class WarGame {
 		String[] suits = new String[] {"Clubs", "Spades", "Hearts", "Diamonds"};
 		String[] faces = new String[] {"Jack", "Queen", "King", "Ace"};
 		DeckOfCards fullDeck = new DeckOfCards();
+		ArrayList<DeckOfCards> playersDecks = new ArrayList<DeckOfCards>();
 		
 		//makes all the number cards
 		for(int i = 2; i < 11; i++) {
@@ -21,6 +23,7 @@ public class WarGame {
 					cardColor = "Red";
 				}
 				fullDeck.deck.add(new Card(suit, cardName, cardColor, i, false));
+				fullDeck.size++;
 			}
 		}
 		
@@ -37,6 +40,7 @@ public class WarGame {
 					cardColor = "Red";
 				}
 				fullDeck.deck.add(new Card(suit, cardName, cardColor, i, true));
+				fullDeck.size++;
 			}
 		}
 		
@@ -46,6 +50,15 @@ public class WarGame {
 		System.out.println("Enter the number of players playing: ");
 		String numOfPlayers = in.nextLine().trim();
 		
+		//makes the players hands/decks to the arraylist
+		int j = 1;
+		while(j <= Integer.parseInt(numOfPlayers)) {
+			String playerName = "Player " + Integer.toString(j);
+		    playersDecks.add(new DeckOfCards(playerName));
+		    j++;
+		}
+		
+		fullDeck.deal(playersDecks.get(0), playersDecks.get(1));
 		
 	}
 	

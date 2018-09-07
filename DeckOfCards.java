@@ -11,15 +11,15 @@ public class DeckOfCards {
 //	public TreeMap<String, Card> deckTreeMap = new TreeMap<String, Card>(); //sorted deck
 //	public HashMap<String, Card> deckHashMap = new HashMap<String, Card>(); //not sorted deck
 	public ArrayList<Card> deck = new ArrayList<Card>();
-	public static ArrayList<DeckOfCards> hands = new ArrayList<DeckOfCards>();
-	private int size;
+//	public static ArrayList<DeckOfCards> hands = new ArrayList<DeckOfCards>();
+	public int size;
 	public String player;
 	
 	public DeckOfCards() { //make the full deck (52)
 //		TreeMap<String, Card> deckTreeMap = new TreeMap<String, Card>(); //sorted deck
 //		HashMap<String, Card> deckHashMap = new HashMap<String, Card>(); //not sorted deck
 		ArrayList<Card> deck = new ArrayList<Card>();
-		size = this.deck.size();
+		size = 0;
 		player = "";
 	}
 	
@@ -27,7 +27,7 @@ public class DeckOfCards {
 //		TreeMap<String, Card> deckTreeMap = new TreeMap<String, Card>(); //sorted deck
 //		HashMap<String, Card> deckHashMap = new HashMap<String, Card>(); //not sorted deck
 		ArrayList<Card> deck = new ArrayList<Card>();
-		size = this.deck.size();
+		size = 0;
 		player = playerName;
 	}
 	
@@ -35,21 +35,31 @@ public class DeckOfCards {
 		Collections.shuffle(this.deck);
 	}
 	
-	public void deal(int numOfPlayers) { //makes hashmaps depending on number of players
-		int i = 1;
-		while(i < numOfPlayers) {
-			String playerName = "Player " + Integer.toString(i);
-			DeckOfCards hand = new DeckOfCards(playerName);
-			hands.add(hand);
-			i++;
+	private Card getCard() {
+		return this.deck.get(0);
+	}
+	
+	public void deal(DeckOfCards player1Hand, DeckOfCards player2Hand) {
+		while(this.size != 0) {
+			player1Hand.deck.add(this.getCard());
+			this.deck.remove(0);
+			player2Hand.deck.add(this.getCard());
+			this.deck.remove(0);
+			this.size = this.size - 2;
 		}
-		
-		for(Card card:this.deck) {
-			for(int j = 0; j < numOfPlayers; j++) {
-				
-			}
-		}
-		
+//		int i = 1;
+//		while(i < numOfPlayers) {
+//			String playerName = "Player " + Integer.toString(i);
+//			DeckOfCards hand = new DeckOfCards(playerName);
+//			hands.add(hand);
+//			i++;
+//		}
+//		
+//		for(Card card:this.deck) {
+//			for(int j = 0; j < numOfPlayers; j++) {
+//				
+//			}
+//		}
 	}
 	
 	public void sort() { //need?
