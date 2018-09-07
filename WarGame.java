@@ -50,7 +50,7 @@ public class WarGame {
 		System.out.println("Enter the number of players playing: ");
 		String numOfPlayers = in.nextLine().trim();
 		
-		//makes the players hands/decks to the arraylist
+		//creates the players' hands/decks to the arraylist
 		int j = 1;
 		while(j <= Integer.parseInt(numOfPlayers)) {
 			String playerName = "Player " + Integer.toString(j);
@@ -58,8 +58,13 @@ public class WarGame {
 		    j++;
 		}
 		
-		//deals out the card objects to the players decks from the full deck
+		//shuffles the full deck before dealing
+		fullDeck.shuffle();
+		
+		//deals out the card objects to the players' decks from the full deck
 		fullDeck.deal(playersDecks.get(0), playersDecks.get(1));
+		
+		
 		
 	}
 	
