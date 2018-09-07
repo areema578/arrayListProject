@@ -35,15 +35,11 @@ public class DeckOfCards {
 		Collections.shuffle(this.deck);
 	}
 	
-	private Card getCard() {
-		return this.deck.get(0);
-	}
-	
 	public void deal(DeckOfCards player1Hand, DeckOfCards player2Hand) {
 		while(this.size != 0) {
-			player1Hand.deck.add(this.getCard());
+			player1Hand.deck.add(this.deck.get(0));
 			this.deck.remove(0);
-			player2Hand.deck.add(this.getCard());
+			player2Hand.deck.add(this.deck.get(0));
 			this.deck.remove(0);
 			this.size = this.size - 2;
 		}

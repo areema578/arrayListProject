@@ -58,6 +58,7 @@ public class WarGame {
 		    j++;
 		}
 		
+		//deals out the card objects to the players decks from the full deck
 		fullDeck.deal(playersDecks.get(0), playersDecks.get(1));
 		
 	}
