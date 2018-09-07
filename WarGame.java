@@ -11,7 +11,7 @@ public class WarGame {
 		String[] faces = new String[] {"Jack", "Queen", "King", "Ace"};
 		DeckOfCards fullDeck = new DeckOfCards();
 		ArrayList<DeckOfCards> playersDecks = new ArrayList<DeckOfCards>();
-		ArrayList<DeckOfCards> middlePile = new ArrayList<DeckOfCards>();
+		DeckOfCards middlePile = new DeckOfCards();
 		
 		//makes all the number cards
 		for(int i = 2; i < 11; i++) {
@@ -68,8 +68,12 @@ public class WarGame {
 		System.out.println("Dealing out the cards to the " + numOfPlayers +" players.");
 		
 		//game starts to play
+		System.out.println(playersDecks.get(0).size);
 		while(playersDecks.get(0).size != 0 || playersDecks.get(1).size != 0) {
-			
+			System.out.println("Player 1 played a " + playersDecks.get(0).deck.get(0).getName() + " and Player 2 played a " + playersDecks.get(1).deck.get(0).getName());
+			if(playersDecks.get(0).deck.get(0).getValue() == playersDecks.get(1).deck.get(0).getValue()) {
+				playersDecks.get(0).play(middlePile);
+			}
 		}
 		
 	}

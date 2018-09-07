@@ -37,4 +37,12 @@ public class Card {
 		this.value = value;
 		this.faceCard = faceCard;
 	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public int getValue() {
+		return this.value;
+	}
 }
