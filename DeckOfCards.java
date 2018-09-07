@@ -38,8 +38,10 @@ public class DeckOfCards {
 	public void deal(DeckOfCards player1Hand, DeckOfCards player2Hand) {
 		while(this.size != 0) {
 			player1Hand.deck.add(this.deck.get(0));
+			player1Hand.size++;
 			this.deck.remove(0);
 			player2Hand.deck.add(this.deck.get(0));
+			player2Hand.size++;
 			this.deck.remove(0);
 			this.size = this.size - 2;
 		}

@@ -44,6 +44,7 @@ public class WarGame {
 				fullDeck.size++;
 			}
 		}
+		System.out.println(fullDeck.size);
 		
 		//Game starts here
 		Scanner in = new Scanner(System.in);
@@ -61,20 +62,25 @@ public class WarGame {
 		
 		//shuffles the full deck before dealing
 		fullDeck.shuffle();
+		System.out.println(fullDeck.size);
 		System.out.println("The main deck is shuffled.");
 		
 		//deals out the card objects to the players' decks from the full deck
 		fullDeck.deal(playersDecks.get(0), playersDecks.get(1));
 		System.out.println("Dealing out the cards to the " + numOfPlayers +" players.");
+		System.out.println(playersDecks.get(0).size);
+		System.out.println(playersDecks.get(1).size);
 		
 		//game starts to play
-		System.out.println(playersDecks.get(0).size);
-		while(playersDecks.get(0).size != 0 || playersDecks.get(1).size != 0) {
-			System.out.println("Player 1 played a " + playersDecks.get(0).deck.get(0).getName() + " and Player 2 played a " + playersDecks.get(1).deck.get(0).getName());
-			if(playersDecks.get(0).deck.get(0).getValue() == playersDecks.get(1).deck.get(0).getValue()) {
-				playersDecks.get(0).play(middlePile);
-			}
-		}
+		/*
+		commented out because i was doing testing but its currently in an infinite loop
+		*/
+//		while(playersDecks.get(0).size != 0 || playersDecks.get(1).size != 0) {
+//			System.out.println("Player 1 played a " + playersDecks.get(0).deck.get(0).getName() + " and Player 2 played a " + playersDecks.get(1).deck.get(0).getName());
+//			if(playersDecks.get(0).deck.get(0).getValue() == playersDecks.get(1).deck.get(0).getValue()) {
+//				playersDecks.get(0).play(middlePile);
+//			}
+//		}
 		
 	}
 	
