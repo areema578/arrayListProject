@@ -62,11 +62,11 @@ public class DeckOfCards {
 		
 	}
 	
-	public void play() { //need?
+	public void play() { //plays the card object at index 0
 		
 	}
 	
-	public void pickup() {
+	public void pickup() { //picks up all the cards in the middle pile to the winner of the round
 		
 	}
 }

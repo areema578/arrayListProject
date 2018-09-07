@@ -11,6 +11,7 @@ public class WarGame {
 		String[] faces = new String[] {"Jack", "Queen", "King", "Ace"};
 		DeckOfCards fullDeck = new DeckOfCards();
 		ArrayList<DeckOfCards> playersDecks = new ArrayList<DeckOfCards>();
+		ArrayList<DeckOfCards> middlePile = new ArrayList<DeckOfCards>();
 		
 		//makes all the number cards
 		for(int i = 2; i < 11; i++) {
@@ -47,7 +48,7 @@ public class WarGame {
 		//Game starts here
 		Scanner in = new Scanner(System.in);
 		System.out.println("Lets play War!");
-		System.out.println("Enter the number of players playing: ");
+		System.out.print("Enter the number of players playing: ");
 		String numOfPlayers = in.nextLine().trim();
 		
 		//creates the players' hands/decks to the arraylist
@@ -60,11 +61,16 @@ public class WarGame {
 		
 		//shuffles the full deck before dealing
 		fullDeck.shuffle();
+		System.out.println("The main deck is shuffled.");
 		
 		//deals out the card objects to the players' decks from the full deck
 		fullDeck.deal(playersDecks.get(0), playersDecks.get(1));
+		System.out.println("Dealing out the cards to the " + numOfPlayers +" players.");
 		
-		
+		//game starts to play
+		while(playersDecks.get(0).size != 0 || playersDecks.get(1).size != 0) {
+			
+		}
 		
 	}
 	
