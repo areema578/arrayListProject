@@ -23,7 +23,7 @@ public class DeckOfCards {
 		player = "";
 	}
 	
-	public DeckOfCards(String playerName) { //make the hands for the players
+	public DeckOfCards(String playerName) { //make the hand/deck for the player
 //		TreeMap<String, Card> deckTreeMap = new TreeMap<String, Card>(); //sorted deck
 //		HashMap<String, Card> deckHashMap = new HashMap<String, Card>(); //not sorted deck
 		ArrayList<Card> deck = new ArrayList<Card>();
@@ -31,7 +31,7 @@ public class DeckOfCards {
 		player = playerName;
 	}
 	
-	public void shuffle() { //shuffles the hashmap based on the keys (value of the card)
+	public void shuffle() { //shuffles the arraylist containing the card objects
 		Collections.shuffle(this.deck);
 	}
 	
