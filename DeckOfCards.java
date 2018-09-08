@@ -85,4 +85,18 @@ public class DeckOfCards {
 		}
 		middlePile.deck.clear();
 	}
+	
+	/**
+	 * creates and return String of all cards in Object DeckOfCards
+	 * @return - returns the string to output
+	 */
+	public String toString() {
+		String str = " ";
+		
+		for ( Card c : deck) {
+			
+			str = c + "\n";
+		}
+		return str;
+	}
 }

@@ -43,12 +43,28 @@ public class Card {
 		this.value = value;
 		this.faceCard = faceCard;
 	}
-	
+	/**
+	 * gets the String name variable of card
+	 * @return - returns the String name.
+	 */
 	public String getName() {
 		return this.name;
 	}
-	
+	/**
+	 * gets the value of the card
+	 * @return - returns card rank value
+	 */
 	public int getValue() {
 		return this.value;
+	}
+	
+	
+	
+	public String toString() {
+		
+		String str = name;
+		
+		return str;
+		
 	}
 }
