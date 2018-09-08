@@ -70,17 +70,17 @@ public class WarGame {
 		System.out.println("Dealing out the cards to the " + numOfPlayers +" players.");
 		System.out.println(playersDecks.get(0).size);
 		System.out.println(playersDecks.get(1).size);
+		System.out.println(fullDeck.size);
 		
 		//game starts to play
-		/*
-		commented out because i was doing testing but its currently in an infinite loop
-		*/
-//		while(playersDecks.get(0).size != 0 || playersDecks.get(1).size != 0) {
-//			System.out.println("Player 1 played a " + playersDecks.get(0).deck.get(0).getName() + " and Player 2 played a " + playersDecks.get(1).deck.get(0).getName());
-//			if(playersDecks.get(0).deck.get(0).getValue() == playersDecks.get(1).deck.get(0).getValue()) {
-//				playersDecks.get(0).play(middlePile);
-//			}
-//		}
+		while(playersDecks.get(0).size != 0 || playersDecks.get(1).size != 0) {
+			System.out.println("Player 1 played a " + playersDecks.get(0).deck.get(0).getName() + " and Player 2 played a " + playersDecks.get(1).deck.get(0).getName());
+			if(playersDecks.get(0).deck.get(0).getValue() == playersDecks.get(1).deck.get(0).getValue()) {
+				playersDecks.get(0).play(middlePile);
+				playersDecks.get(1).play(middlePile);
+				
+			}
+		}
 		
 	}
 	
