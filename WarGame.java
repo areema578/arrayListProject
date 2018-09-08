@@ -98,8 +98,6 @@ public class WarGame {
 				
 			} else if ( middlePile.deck.get(0).getValue()  == middlePile.deck.get(1).getValue() ) {
 				while (playersDecks.get(0).deck.size() > 3 &&  playersDecks.get(1).deck.size()  > 3 ) {
-					System.out.println(playersDecks.get(0).deck.size() );
-					System.out.println(playersDecks.get(1).deck.size() );
 					System.out.println("Player 1 played a xxx and Player 2 played a xxx");
 					playersDecks.get(0).play(middlePile);
 					playersDecks.get(1).play(middlePile);
