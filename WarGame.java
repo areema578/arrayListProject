@@ -78,7 +78,7 @@ public class WarGame {
 			if(playersDecks.get(0).deck.get(0).getValue() == playersDecks.get(1).deck.get(0).getValue()) {
 				playersDecks.get(0).play(middlePile);
 				playersDecks.get(1).play(middlePile);
-				
+				//need this to loop again if the cards equal again
 			}
 		}
 		
