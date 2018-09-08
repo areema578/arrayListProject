@@ -65,11 +65,15 @@ public class DeckOfCards {
 	}
 	
 	public void play(DeckOfCards middlePile) { //plays the card object at index 0 and place it in the middle pile
-		Card playedCard = this.deck.remove(0);
+		Card playedCard = this.deck.get(0); 
 		middlePile.deck.add(playedCard);
+		this.deck.remove(0);
 	}
 	
-	public void pickup() { //picks up all the cards in the middle pile to the winner of the round
-		
+	public void pickup( DeckOfCards middlePile) { //picks up all the cards in the middle pile to the winner of the round
+		for(Card c : middlePile.deck ) {
+			this.deck.add(c);
+		}
+		middlePile.deck.clear();
 	}
 }
