@@ -1,9 +1,15 @@
 package arraylistProject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
+/**	
+ * Scott Arima and Howard Chen
+ * 9 Sep 2018
+ * Purpose of the program- Plays a card game of War 
+ * Inputs Number of Players
+ * Output - Game Log -Displays games actions with winner of each round and entire game.
+ */
 public class WarGame {
 
 	public static void main(String[] args) {
@@ -12,6 +18,7 @@ public class WarGame {
 		DeckOfCards fullDeck = new DeckOfCards();
 		ArrayList<DeckOfCards> playersDecks = new ArrayList<DeckOfCards>();
 		DeckOfCards middlePile = new DeckOfCards();
+		boolean insufficentCards = true;
 
 		
 		//makes all the number cards
@@ -75,17 +82,16 @@ public class WarGame {
 		
 		int cardNumber = 0;
 		//game starts to play
-		while(playersDecks.get(0).deck.size()  != 0 && playersDecks.get(1).deck.size()  != 0) {
-			System.out.println("Player 1 played a " + playersDecks.get(0).deck.get(0).getName() + " and Player 2 played a " + playersDecks.get(1).deck.get(0).getName());
+		while(playersDecks.get(0).deck.size()  != 0 && playersDecks.get(1).deck.size()  != 0 && insufficentCards) {
+			System.out.println("Player 1 played a " + playersDecks.get(0).deck.get(0).getName());
 			playersDecks.get(0).play(middlePile);
+			System.out.println("Player 2 played a " + playersDecks.get(1).deck.get(0).getName());
 			playersDecks.get(1).play(middlePile);
-			
 			if(middlePile.deck.get(0).getValue() > middlePile.deck.get(1).getValue()  ) {
 				System.out.println("player 1 wins the round!");
 				playersDecks.get(0).deck.add(middlePile.deck.get(0) );
 				playersDecks.get(0).deck.add(middlePile.deck.get(1) );
 				middlePile.deck.clear();
-
 			
 				
 			} else if (middlePile.deck.get(0).getValue()  < middlePile.deck.get(1).getValue() ) {
@@ -97,32 +103,35 @@ public class WarGame {
 			
 				
 			} else if ( middlePile.deck.get(0).getValue()  == middlePile.deck.get(1).getValue() ) {
-				while (playersDecks.get(0).deck.size() > 3 &&  playersDecks.get(1).deck.size()  > 3 ) {
-					System.out.println("Player 1 played a xxx and Player 2 played a xxx");
+				while (playersDecks.get(0).deck.size() > 3 &&  playersDecks.get(1).deck.size()  > 3 && insufficentCards ) {
+					System.out.println("Player 1 played a War card face down ");
 					playersDecks.get(0).play(middlePile);
+					System.out.println("Player 2 played a War card face down ");
 					playersDecks.get(1).play(middlePile);
-					System.out.println("Player 1 played a xxx and Player 2 played a xxx");
+					System.out.println("Player 1 played a War card face down ");
 					playersDecks.get(0).play(middlePile);
+					System.out.println("Player 2 played a War card face down ");
 					playersDecks.get(1).play(middlePile);
-					System.out.println("Player 1 played a xxx and Player 2 played a xxx");
+					System.out.println("Player 1 played a War card face down ");
 					playersDecks.get(0).play(middlePile);
+					System.out.println("Player 2 played a War card face down ");
 					playersDecks.get(1).play(middlePile);
-					System.out.println("Player 1 played a " + playersDecks.get(0).deck.get(0).getName() + " and Player 2 played a " + playersDecks.get(1).deck.get(0).getName());
+					System.out.println("Player 1 played a " + playersDecks.get(0).deck.get(0).getName());
 					playersDecks.get(0).play(middlePile);
+					System.out.println("Player 2 played a " + playersDecks.get(1).deck.get(0).getName());
 					playersDecks.get(1).play(middlePile);
 					
 					if(middlePile.deck.get(middlePile.deck.size() - 2).getValue() > middlePile.deck.get(middlePile.deck.size() - 1).getValue()  ) {
 						System.out.println("player 1 wins the round!");
 						playersDecks.get(0).pickup(middlePile);
-						if (playersDecks.get(0).size < 4 ) {
-							
+						if (playersDecks.get(0).deck.size() < 4) {
 							System.out.println("Player 1 does not have enough cards to continue war, Player 2 Wins the Game! ");
-							
+							insufficentCards = false;
 						}
 							
-						else if (playersDecks.get(1).size < 4) {
+						else if (playersDecks.get(1).deck.size() < 4) {
 							System.out.println("Player 2 does not have enough cards to continue war, Player 1 Wins the Game! ");
-							
+							insufficentCards = false;
 						}
 					
 						
@@ -132,19 +141,17 @@ public class WarGame {
 						if (playersDecks.get(0).size < 4 ) {
 							
 							System.out.println("Player 1 does not have enough cards to continue war, Player 2 Wins the Game! ");
-							
+							insufficentCards = false;
 						}
 							
 						else if (playersDecks.get(1).size < 4) {
 							System.out.println("Player 2 does not have enough cards to continue war, Player 1 Wins the Game! ");
-							
+							insufficentCards = false;
 						}
 					
 					}
 				}
 				
-
-	
 				}
 		}
 		
