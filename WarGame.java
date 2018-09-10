@@ -96,7 +96,8 @@ public class WarGame {
 
 			
 				
-			} else if ( middlePile.deck.get(0).getValue()  == middlePile.deck.get(1).getValue() ) {
+			} else if ( middlePile.deck.get(0).getValue()  == middlePile.deck.get(1).getValue() ) { // if both cards equal in value
+				insufficentCardsForWar = true; //resets insufficentWar boolean
 				while (playersDecks.get(0).deck.size() > 3 &&  playersDecks.get(1).deck.size()  > 3 && insufficentCardsForWar ) { //loop to start War
 					System.out.println("Player 1 played a War card face down "); // outputs and places war card facedown in middlepile
 					playersDecks.get(0).play(middlePile);
