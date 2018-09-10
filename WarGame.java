@@ -87,21 +87,18 @@ public class WarGame {
 				playersDecks.get(0).deck.add(middlePile.deck.get(0) );
 				playersDecks.get(0).deck.add(middlePile.deck.get(1) );
 				middlePile.deck.clear();
-			
 				
 			} else if (middlePile.deck.get(0).getValue()  < middlePile.deck.get(1).getValue() ) {  // checks if player 2 card's rank is higher
 				System.out.println("Player 2 wins the round!");
 				playersDecks.get(1).deck.add(middlePile.deck.get(0) );
 				playersDecks.get(1).deck.add(middlePile.deck.get(1) );
 				middlePile.deck.clear();
-
-			
 				
 			} else if ( middlePile.deck.get(0).getValue()  == middlePile.deck.get(1).getValue() ) { // if both cards equal in value
 				insufficentCardsForWar = true; //resets insufficentWar boolean
 				playerWonWar = true;
 				while (playersDecks.get(0).deck.size() > 3 &&  playersDecks.get(1).deck.size()  > 3 && insufficentCardsForWar && playerWonWar) { //loop to start War
-					System.out.println("We have a tie; lets start war!");
+					System.out.println("We have a tie; time for war!");
 					System.out.println("Player 1 played a War card face down "); // outputs and places war card facedown in middlepile
 					playersDecks.get(0).play(middlePile);
 					System.out.println("Player 2 played a War card face down "); // outputs and places war card facedown in middlepile
@@ -126,7 +123,6 @@ public class WarGame {
 						playersDecks.get(0).pickup(middlePile);
 						playerWonWar = false;
 						
-						
 						if (playersDecks.get(0).deck.size() < 4) { // checks if player 1 card has enough cards to continue war
 							System.out.println("Player 1 does not have enough cards to continue war, Player 2 Wins the Game! ");
 							insufficentCardsForWar = false;
@@ -146,32 +142,26 @@ public class WarGame {
 						playerWonWar = false;
 						
 						if (playersDecks.get(0).size < 4 ) {  // checks if player 1 card has enough cards to continue war
-							
 							System.out.println("Player 1 does not have enough cards to continue war, Player 2 Wins the Game! ");
 							insufficentCardsForWar = false;
-
 						}
 							
 						else if (playersDecks.get(1).size < 4) { // checks if player 2 card has enough cards to continue war
 							System.out.println("Player 2 does not have enough cards to continue war, Player 1 Wins the Game! ");
 							insufficentCardsForWar = false;
-
 						}
-					
 					}
 				}
-				
-				}
+			}
 		}
 		
 		if ( playersDecks.get(0).deck.size()  == 0 ) { // checks if player 1 card has enough cards to continue game
 			System.out.println("Player 1 has ran out of cards! Player 2 Wins The Game");
 		}
-				
-				else if(playersDecks.get(1).deck.size()  == 0) { // checks if player 2 card has enough cards to continue game
-					System.out.println("Player 2 has ran out of cards! Player 1 Wins The Game");
-				}
+	
+		else if(playersDecks.get(1).deck.size()  == 0) { // checks if player 2 card has enough cards to continue game
+			System.out.println("Player 2 has ran out of cards! Player 1 Wins The Game");
+		}
 		System.out.println("Game Over! Thanks for playing!"); //outputs Game Over!
 	}
-	
 }
