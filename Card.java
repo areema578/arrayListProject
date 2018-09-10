@@ -58,7 +58,10 @@ public class Card {
 		return this.value;
 	}
 	
-	
+	/**
+	 * creates and return String of card attributes for Object Card
+	 * @return - returns the string to output
+	 */
 	
 	public String toString() {
 		
