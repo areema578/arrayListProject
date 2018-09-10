@@ -18,8 +18,8 @@ public class WarGame {
 		DeckOfCards fullDeck = new DeckOfCards();
 		ArrayList<DeckOfCards> playersDecks = new ArrayList<DeckOfCards>();
 		DeckOfCards middlePile = new DeckOfCards();
-		boolean insufficentCardsForWar = true; // 
-		boolean playerWonWar = true;//
+		boolean insufficentCardsForWar = true;
+		boolean playerWonWar = true;
 
 		//makes all the number cards
 		for(int i = 2; i < 11; i++) {
