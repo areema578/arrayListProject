@@ -116,8 +116,8 @@ public class WarGame {
 					System.out.println("Player 2 played a " + playersDecks.get(1).deck.get(0));
 					playersDecks.get(1).play(middlePile);
 					
-					// checks which player has higher card rank
-					//checksif player 1 card rank is higher
+					//checks which player has higher card rank
+					//checks if player 1 card rank is higher
 					if(middlePile.deck.get(middlePile.deck.size() - 2).getValue() > middlePile.deck.get(middlePile.deck.size() - 1).getValue()  ) { // player one wins the round
 						System.out.println("Player 1 wins the round!");
 						playersDecks.get(0).pickup(middlePile);
