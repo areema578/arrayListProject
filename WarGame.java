@@ -119,7 +119,7 @@ public class WarGame {
 					// checks which player has higher card rank
 					//checksif player 1 card rank is higher
 					if(middlePile.deck.get(middlePile.deck.size() - 2).getValue() > middlePile.deck.get(middlePile.deck.size() - 1).getValue()  ) { // player one wins the round
-						System.out.println("player 1 wins the round!");
+						System.out.println("Player 1 wins the round!");
 						playersDecks.get(0).pickup(middlePile);
 						playerWonWar = false;
 						
