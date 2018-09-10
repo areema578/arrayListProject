@@ -3,8 +3,8 @@ package arraylistProject;
  * Scott Arima and Howard Chen
  * 9 Sep 2018
  * Purpose of the program- Plays a card game of War 
- * Inputs Number of Players
- * Output - Game Log -Displays games actions with winner of each round and entire game.
+ * Inputs: Any key to start the game
+ * Output: Game Log - Displays games actions with winner of each round and entire game.
  */
 public class Card {
 

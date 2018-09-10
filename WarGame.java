@@ -7,8 +7,8 @@ import java.util.Scanner;
  * Scott Arima and Howard Chen
  * 9 Sep 2018
  * Purpose of the program- Plays a card game of War 
- * Inputs Number of Players
- * Output - Game Log -Displays games actions with winner of each round and entire game.
+ * Inputs: Any key to start the game
+ * Output: Game Log - Displays games actions with winner of each round and entire game.
  */
 public class WarGame {
 
@@ -55,8 +55,8 @@ public class WarGame {
 
 		//Game starts here
 		Scanner in = new Scanner(System.in);
-		System.out.println("\tLets play War!");
-		System.out.print("     Press Enter key to play");
+		System.out.println("Lets play War!");
+		System.out.print("Press Enter key to play");
 		String anyKey = in.nextLine().trim();
 		
 		//creates the players' hands/decks to the arraylist
@@ -119,6 +119,7 @@ public class WarGame {
 					playersDecks.get(1).play(middlePile);
 					
 					// checks which player has higher card rank
+					//checksif player 1 card rank is higher
 					if(middlePile.deck.get(middlePile.deck.size() - 2).getValue() > middlePile.deck.get(middlePile.deck.size() - 1).getValue()  ) { // player one wins the round
 						System.out.println("player 1 wins the round!");
 						playersDecks.get(0).pickup(middlePile);
@@ -137,7 +138,7 @@ public class WarGame {
 
 						}
 					
-						//checks if player 2 card rank is higher
+					//checks if player 2 card rank is higher
 					} else if (middlePile.deck.get(middlePile.deck.size() - 2).getValue()  < middlePile.deck.get(middlePile.deck.size() - 1).getValue() ) {
 						System.out.println("Player 2 wins the round!");
 						playersDecks.get(1).pickup(middlePile);
