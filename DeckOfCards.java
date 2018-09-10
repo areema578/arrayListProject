@@ -12,17 +12,15 @@ import java.util.Collections;
  */
 public class DeckOfCards {
 
-
 	public ArrayList<Card> deck = new ArrayList<Card>();
-
 	public int size;
 	public String player;
+	
 	/**
 	 * constructs a default Deck of Cards object with ArrayList deck, default values for size is 0, and player is ""
 	 * 
 	 */
 	public DeckOfCards() { //make the full deck (52)
-
 		ArrayList<Card> deck = new ArrayList<Card>();
 		size = 0;
 		player = "";
@@ -33,7 +31,6 @@ public class DeckOfCards {
 	 * @param playerName - name of the player this DeckofCards belongs to
 	 */
 	public DeckOfCards(String playerName) { //make the hand/deck for the player
-
 		ArrayList<Card> deck = new ArrayList<Card>();
 		size = 0;
 		player = playerName;
@@ -45,6 +42,7 @@ public class DeckOfCards {
 	public void shuffle() { //shuffles the arraylist containing the card objects
 		Collections.shuffle(this.deck);
 	}
+	
 	/**
 	 * deals cards evenly and in order to both players
 	 * @param player1Hand - player 1's deckofCards object hand 
@@ -60,7 +58,6 @@ public class DeckOfCards {
 			this.deck.remove(0);
 			this.size = this.size - 2;
 		}
-
 	}
 	
 	/**
@@ -72,8 +69,8 @@ public class DeckOfCards {
 		middlePile.deck.add(playedCard);
 		this.deck.remove(0);
 		this.size --;
-		
 	}
+	
 	/**
 	 * picks up all cards in middlePile and adds to winner's hand
 	 * @param middlePile- DeckofCards object of middlePile
